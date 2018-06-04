@@ -96,9 +96,12 @@ class Spider(threading.Thread):
             jsfile_url="http://"+model[len(model)-1]     #页面上可能有两个地址，取最后一个匹配的地址
         except Exception as e:
             print(e)
-        jsfile=requests.get(jsfile_url,headers=headers,proxies=proxies,timeout=3).text
-
-        constant=re.search(r'.*jdlt\w+\(e,\"(\w+)\".*',jsfile).group(1)
+        jsfile=requests.get(jsfile_url,headers=headers,proxies=proxies,timeout=3).text 
+      '''
+      常量变化，不在是变动的无需正则去匹配
+      '''
+       #constant=re.search(r'.*jdlt\w+\(e,\"(\w+)\".*',jsfile).group(1)
+        constant='OMHXLI9W0dyxQHID4kSqdqVar4opPL9E'
         '''
         向parse函数传入constant常量和img-hash得到图片地址
         '''
