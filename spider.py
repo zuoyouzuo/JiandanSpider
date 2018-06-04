@@ -98,7 +98,12 @@ class Spider(threading.Thread):
             print(e)
         jsfile=requests.get(jsfile_url,headers=headers,proxies=proxies,timeout=3).text
 
-        constant=re.search(r'.*jdlt\w+\(e,\"(\w+)\".*',jsfile).group(1)
+        '''
+        改正则无法取到常量，因常量成固定参数了
+        '''
+        #constant=re.search(r'.*jdlt\w+\(e,\"(\w+)\".*',jsfile).group(1)
+        constant='OMHXLI9W0dyxQHID4kSqdqVar4opPL9E'
+        
         '''
         向parse函数传入constant常量和img-hash得到图片地址
         '''
